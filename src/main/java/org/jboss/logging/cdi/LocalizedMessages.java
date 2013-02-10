@@ -1,9 +1,6 @@
 package org.jboss.logging.cdi;
 
-import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.PARAMETER;
-import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.Documented;
@@ -16,14 +13,7 @@ import javax.inject.Qualifier;
  */
 @Qualifier
 @Retention(RUNTIME)
-@Target(value = {TYPE, METHOD, FIELD, PARAMETER})
+@Target(value = METHOD)
 @Documented
-public @interface LocalizedMessages {
-
-    /**
-     * The local used for the message bundle.
-     *
-     * @return the local
-     */
-    String locale() default "";
+@interface LocalizedMessages {
 }
